@@ -28,7 +28,7 @@ class variables:
                       'QPushButton:pressed{background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,' \
                       ' stop: 0 #97C2C3, stop: 1 #86ADAC);}  '
         self.nordic_background = 'background-color: #3D4454;'
-        self.widget_border = 'border-color: #555555; border-style: solid; border-width: 3px; border-radius: 10px;'
+        self.widget_border = 'border-color: #555555; border-style: solid; border-width: 1px; border-radius: 10px;'
 
     def names(self):
         self.window_title = 'Base Qt5'
