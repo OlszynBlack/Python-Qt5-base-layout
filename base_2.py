@@ -21,9 +21,7 @@ class variables:
         self.height = 1080
 
         self.section1_width = 0.70       # 1% -> 0.01  10% -> 0.1  100% -> 1
-        self.section2_width = 0.30
-        self.utilbox_height = 0.60
-        self.buttonbox_height = 0.40
+        self.section2_1_height = 0.60
 
     def style(self):
         self.nordic_button = 'QPushButton{background-color: #2D3340; border-radius: 10px;}  ' \
@@ -82,8 +80,8 @@ class mainWindow(QMainWindow):
         self.main_layout.addLayout(self.section2)
 
     def utilbox_layout(self):
-        width = (self.v.width - self.v.margin_left - self.v.margin_right - self.v.spacing) * self.v.section2_width
-        height = (self.v.height - self.v.margin_top - self.v.margin_bottom - self.v.spacing) * self.v.utilbox_height
+        width = (self.v.width - self.v.margin_left - self.v.margin_right - self.v.spacing) * (1 - self.v.section1_width)
+        height = (self.v.height - self.v.margin_top - self.v.margin_bottom - self.v.spacing) * self.v.section2_1_height
 
         self.utilbox = QWidget()
         self.utilbox.setFixedSize(width, height)
@@ -92,8 +90,8 @@ class mainWindow(QMainWindow):
         self.section2.addWidget(self.utilbox)
 
     def buttonbox_layout(self):
-        width = (self.v.width - self.v.margin_left - self.v.margin_right - self.v.spacing) * self.v.section2_width
-        height = (self.v.height - self.v.margin_top - self.v.margin_bottom - self.v.spacing) * self.v.buttonbox_height
+        width = (self.v.width - self.v.margin_left - self.v.margin_right - self.v.spacing) * (1 - self.v.section1_width)
+        height = (self.v.height - self.v.margin_top - self.v.margin_bottom - self.v.spacing) * (1 - self.v.section2_1_height)
 
         self.buttonbox = QWidget()
         self.buttonbox.setFixedSize(width, height)
